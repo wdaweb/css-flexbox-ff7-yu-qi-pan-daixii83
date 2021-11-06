@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        font-family: DFKai-sb;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        width: 600px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .wordL {
+        writing-mode: vertical-lr;
+        font-size: 1.35rem;
+        position: absolute;
+        left: 50px;
+      }
+      .wordR {
+        writing-mode: vertical-rl;
+        font-size: 1.35rem;
+        position: absolute;
+        right: 50px;
+      }
+
+      .mainboard {
+        width: 400px;
+        height: 420px;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .blackboard {
+        width: 320px;
+        height: 160px;
+        display: flex;
+        flex-wrap: wrap;
+        border: 0.5px solid #000;
+        position: relative;
+      }
+
+      .grid {
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        border: 0.5px solid #000;
+        position: relative;
+      }
+
+      .gridTL {
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        border: 0.5px solid #000;
+        position: relative;
+      }
+
+      .gridTL::before {
+        content: "";
+        width: 100%;
+        height: 20px;
+        box-sizing: border-box;
+        border-bottom: 0.5px solid #000;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: rotateZ(45deg) scale(1.43);
+        transform-origin: bottom center;
+      }
+
+      .gridTR {
+        width: 40px;
+        height: 40px;
+        box-sizing: border-box;
+        border: 0.5px solid #000;
+        position: relative;
+      }
+
+      .gridTR::before {
+        content: "";
+        width: 100%;
+        height: 20px;
+        box-sizing: border-box;
+        border-bottom: 0.5px solid #000;
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform: rotateZ(315deg) scale(1.43);
+        transform-origin: bottom center;
+      }
+
+      .middleboard {
+        width: 321px;
+        height: 40px;
+        box-sizing: border-box;
+        border-left: 1px solid #000;
+        border-right: 1px solid #000;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .Chuhe {
+        font-size: 1.5rem;
+        position: absolute;
+        left: 55px;
+      }
+
+      .Hanjie {
+        font-size: 1.5rem;
+        position: absolute;
+        right: 55px;
+      }
+
+      .redboard {
+        width: 320px;
+        height: 160px;
+        display: flex;
+        flex-wrap: wrap;
+        border: 0.5px solid #000;
+      }
+
+      .chessBKL {
+        font-size: 1.3rem;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        color: #000;
+        border: 0.5px solid #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -15px;
+        left: -15px;
+      }
+
+      .chessBKR {
+        font-size: 1.3rem;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        color: #000;
+        border: 0.5px solid #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+      }
+
+      .chessRDL {
+        font-size: 1.3rem;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        color: red;
+        border: 0.5px solid #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -15px;
+        left: -15px;
+      }
+      .chessRDLB {
+        font-size: 1.3rem;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        color: red;
+        border: 0.5px solid #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: -15px;
+        left: -15px;
+      }
+
+      .chessRDR {
+        font-size: 1.3rem;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        color: red;
+        border: 0.5px solid #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+      }
+
+      .chessRDRB {
+        font-size: 1.3rem;
+        width: 30px;
+        height: 30px;
+        background: #fff;
+        color: red;
+        border: 0.5px solid #000;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: -15px;
+        right: -15px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wordL">棋盤裡，車無輪，馬無疆，叫聲將軍堤防堤防</div>
+      <div class="wordR">圖畫裡，龍不吟，虎不嘯，小小書僮可笑可笑</div>
+      <div class="mainboard">
+        <div class="blackboard">
+          <div class="grid"><div class="chessBKL">車</div></div>
+          <div class="grid"><div class="chessBKL">馬</div></div>
+          <div class="grid"><div class="chessBKL">象</div></div>
+          <div class="gridTL"><div class="chessBKL">士</div></div>
+          <div class="gridTR"><div class="chessBKL">將</div></div>
+          <div class="grid"><div class="chessBKL">士</div></div>
+          <div class="grid"><div class="chessBKL">象</div></div>
+          <div class="grid">
+            <div class="chessBKL">馬</div>
+            <div class="chessBKR">車</div>
+          </div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="gridTR"></div>
+          <div class="gridTL"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessBKL">包</div></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessBKL">包</div></div>
+          <div class="grid"><div class="chessBKL">卒</div></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessBKL">卒</div></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessBKL">卒</div></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessBKL">卒</div></div>
+          <div class="grid"><div class="chessBKR">卒</div></div>
+        </div>
+        <div class="middleboard">
+          <div class="Chuhe">楚河</div>
+          <div class="Hanjie">漢界</div>
+        </div>
+        <div class="redboard">
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessRDL">兵</div></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessRDL">兵</div></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessRDL">兵</div></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessRDL">兵</div></div>
+          <div class="grid"><div class="chessRDR">兵</div></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessRDL">炮</div></div>
+          <div class="grid"></div>
+          <div class="gridTL"></div>
+          <div class="gridTR"></div>
+          <div class="grid"></div>
+          <div class="grid"></div>
+          <div class="grid"><div class="chessRDL">炮</div></div>
+          <div class="grid"><div class="chessRDLB">俥</div></div>
+          <div class="grid"><div class="chessRDLB">傌</div></div>
+          <div class="grid"><div class="chessRDLB">相</div></div>
+          <div class="gridTR"><div class="chessRDLB">仕</div></div>
+          <div class="gridTL"><div class="chessRDLB">帥</div></div>
+          <div class="grid"><div class="chessRDLB">仕</div></div>
+          <div class="grid"><div class="chessRDLB">相</div></div>
+          <div class="grid">
+            <div class="chessRDLB">傌</div>
+            <div class="chessRDRB">俥</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      font-family: sans-serif;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/bg-full.jpg);
+      background-blend-mode: darken;
+
+      background-size: cover;
+      margin: auto;
+    }
+
+    body .container {
+      width: 80%;
+      height: 80%;
+      display: flex;
+    }
+
+    .leftbox {
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(./images/main.jpg) 50%;
+      background-size: cover;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sale {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 2rem;
+    }
+
+    .sale img {
+      width: 30%;
+    }
+
+    .sale h1 {
+      margin: 0;
+    }
+
+    .sale p {
+      margin: 0 5rem 0 5rem;
+      text-align: center;
+    }
+
+    .rightbox {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .cloud {
+      width: 100%;
+      height: 50%;
+      background-color: #aaa;
+      background-image: url(./images/cloud.png);
+      background-size: 40%;
+      background-repeat: no-repeat;
+      background-position: right bottom;
+      color: #000;
+      position: relative;
+    }
+
+    .cloud h1 {
+      position: absolute;
+      top: 25%;
+      left: 5%;
+    }
+
+    .cloud p {
+      width: 60%;
+      position: absolute;
+      top: 40%;
+      left: 5%;
+    }
+
+
+    .tifa {
+      width: 100%;
+      height: 50%;
+      background-color: #000;
+      background-image: url(./images/tifa.png);
+      background-size: 40%;
+      background-repeat: no-repeat;
+      background-position: left bottom;
+      color: #fff;
+      position: relative;
+    }
+
+    .tifa h1 {
+      position: absolute;
+      top: 25%;
+      left: 35%;
+    }
+
+    .tifa p {
+      width: 60%;
+      position: absolute;
+      top: 40%;
+      left: 35%;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="leftbox">
+      <div class="sale">
+        <img src="./images/ps4-ff7.png" alt="">
+        <h1>AVAILABLE NOW</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti delectus laboriosam deleniti molestias aut
+          dicta veniam neque ut nobis omnis, necessitatibus reiciendis dolor, amet velit, quisquam esse inventore
+          deserunt. Voluptatem?</p>
+      </div>
+    </div>
+    <div class="rightbox">
+      <div class="cloud">
+        <h1>Cloud</h1>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem sed, at, rerum eum est cupiditate
+          enim delectus doloremque provident quasi, totam facere perspiciatis? Eos iste delectus sint quidem illum
+          repellat.</p>
+      </div>
+      <div class="tifa">
+        <h1>Tifa</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi corporis officiis optio! Magnam optio in
+          officia amet? Magni, sapiente harum ratione minima rem sit inventore asperiores ipsa fuga ullam et.</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
